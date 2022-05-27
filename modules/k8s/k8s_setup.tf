@@ -89,12 +89,12 @@ data "kubernetes_service" "nginx-ingress-controller" {
     data.digitalocean_kubernetes_cluster.juul
   ]
   metadata {
-    name = "nginx-ingress-controller"
+    name      = "nginx-ingress-controller"
     namespace = "kube-system"
-  } 
+  }
 }
 
 output "loadbalancer_ip" {
   description = "load balancer ip"
-  value = data.kubernetes_service.nginx-ingress-controller.status[0].load_balancer[0].ingress[0].ip
+  value       = data.kubernetes_service.nginx-ingress-controller.status[0].load_balancer[0].ingress[0].ip
 }

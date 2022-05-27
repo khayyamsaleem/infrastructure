@@ -47,5 +47,5 @@ output "urn" {
 
 output "cluster_info" {
   description = "reference to cluster output"
-  value = digitalocean_kubernetes_cluster.juul
+  value       = digitalocean_kubernetes_cluster.juul
 }

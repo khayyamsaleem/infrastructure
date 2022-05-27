@@ -17,7 +17,7 @@ resource "digitalocean_project" "juul" {
   name        = "juul"
   description = "personal project"
   environment = "Production"
-  resources   = [
+  resources = [
     module.doks.urn,
     module.domains.khayyam_me_urn
   ]
@@ -31,4 +31,9 @@ output "juul-nodes" {
 output "juul-subnet" {
   description = "juul subnet"
   value       = module.doks.cluster_subnet
+}
+
+output "juul-loadbalancer-ip" {
+  description = "loadbalancer ip"
+  value       = module.k8s.loadbalancer_ip
 }
